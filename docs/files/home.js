@@ -3,19 +3,8 @@
     var ua = navigator.userAgent.toLowerCase(),
         iphoneos = (ua.match(/iphone os/i) == "iphone os") || (ua.match(/iph os/i) == "iph os") || (ua.match(/ipad/i) == "ipad"),
         android = (ua.match(/android/i) == "android") || (ua.match(/adr/i) == "adr") || (ua.match(/android/i) == "mi pad");
-     
+        
 	//注册点击事件
-	var a_list = document.getElementsByTagName("a"),
-        i = 0,
-        len = a_list.length;
-    for (i = 0; i < len; i++) {
-        (function (index) {
-            a_list[index].addEventListener('click', function () {
-                //DownSoft();
-				WebDownLoad();
-            }, false);
-        })(i)
-    }
 
 	//获取传递的参数
 	//var allNumbers = window.location.href.replace(/[^0-9]/g,' ').trim().split(/\s+/);
@@ -78,14 +67,6 @@
         head.appendChild(style);
     }
 
-    function DownSoft() {
-        if(iphoneos) {
-		    window.location.href = 'https://llkjql.oss-cn-hangzhou.aliyuncs.com/ceshi.apk';
-            return;
-        }
-        window.location.href = 'https://llkjql.oss-cn-hangzhou.aliyuncs.com/ceshi.apk';
-    }
-		
 	function WebDownLoad(){
 		var data = OpenInstall.parseUrlParams();
         new OpenInstall({
@@ -103,6 +84,12 @@
         }
      }, data);
    }
+   var downBtn =document.getElementById("down_btn");
+    downBtn.click = function(){
+        alert("====")
+        WebDownLoad();
+        return false;
+    }
 	
 }
 
