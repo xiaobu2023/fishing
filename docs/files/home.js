@@ -67,29 +67,29 @@
         head.appendChild(style);
     }
 
-	function WebDownLoad(){
-		var data = OpenInstall.parseUrlParams();
-        new OpenInstall({
-        /*appKey必选参数，openinstall平台为每个应用分配的ID*/
-        appKey : "c4ug4u",
-        /*自定义遮罩的html*/
-        //mask:function(){
-        //  return "<div id='_shadow' style='position:fixed;left:0;top:0;background:rgba(0,255,0,0.5);filter:alpha(opacity=50);width:100%;height:100%;z-index:10000;'></div>"
-        //},
-        /*OpenInstall初始化完成的回调函数，可选*/
-        onready : function() {
-            /*在app已安装的情况尝试拉起app*/
-            this.schemeWakeup();
-			this.wakeupOrInstall();
-        }
-     }, data);
-   }
-   var downBtn =document.getElementById("down_btn");
-    downBtn.click = function(){
-        alert("====")
-        WebDownLoad();
-        return false;
-    }
+// 	function WebDownLoad(){
+// 		var data = OpenInstall.parseUrlParams();
+//         new OpenInstall({
+//         /*appKey必选参数，openinstall平台为每个应用分配的ID*/
+//         appKey : "c4ug4u",
+//         /*自定义遮罩的html*/
+//         //mask:function(){
+//         //  return "<div id='_shadow' style='position:fixed;left:0;top:0;background:rgba(0,255,0,0.5);filter:alpha(opacity=50);width:100%;height:100%;z-index:10000;'></div>"
+//         //},
+//         /*OpenInstall初始化完成的回调函数，可选*/
+//         onready : function() {
+//             /*在app已安装的情况尝试拉起app*/
+//             this.schemeWakeup();
+// 			this.wakeupOrInstall();
+//         }
+//      }, data);
+//    }
+//    var downBtn =document.getElementById("down_btn");
+//     downBtn.click = function(){
+//         alert("====")
+//         WebDownLoad();
+//         return false;
+//     }
 	
 }
 
