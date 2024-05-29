@@ -508,20 +508,19 @@
                  var m = this, button = document.getElementById("down_btn"),button2 = document.getElementById("dw_propt_btn"),button3 = document.getElementById("body_btn"); //为button对象绑定对应id的元素
                  
                  button.onclick = function () {
-                     //对应button的点击事件
-                     m.wakeupOrInstall(); //此方法为scheme、Universal Link唤醒以及引导下载的作用（必须调用且不可额外自行跳转下载）
+                     m.wakeupOrInstall();
                      return false;
                  }
  
                  button2.onclick = function (){
                     alert("=====2")
-                     m.wakeupOrInstall(); //此方法为scheme、Universal Link唤醒以及引导下载的作用（必须调用且不可额外自行跳转下载）
+                     m.wakeupOrInstall();
                      return false;
                  }
                  
                  button3.onclick = function (){
                     alert("=====3")
-                     m.wakeupOrInstall(); //此方法为scheme、Universal Link唤醒以及引导下载的作用（必须调用且不可额外自行跳转下载）
+                     m.wakeupOrInstall();
                      return false;
                  }
 
