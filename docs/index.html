@@ -476,7 +476,7 @@
                 <span>Download and register to receive free coins.</span>
 				
             </div>
-            <button id="down_btn" class="ppt_dw">download</button>
+            <button id="down_btn" class="ppt_dw" onclick="WebDownLoad();">download</button>
         </div>
      </div>
      <!-- <div class="guid max_width">
@@ -500,23 +500,20 @@
 
      <script type="text/javascript">
          var data = OpenInstall.parseUrlParams();
-         var opobj = new OpenInstall({
+         function WebDownLoad(){
+            var opobj = new OpenInstall({
              //初始化方法，与openinstall服务器交互，应尽早调用
              appKey: "c4ug4u", //appKey为openinstall为应用分配的唯一id（必须传入）
              //channelCode: channelCode,
              onready: function () {
-                alert("======")
                  //初始化成功回调方法。当初始化完成后，会自动进入
                  this.schemeWakeup();
-                 var m = this, button = document.getElementById("down_btn"); //为button对象绑定对应id的元素
-                 
-                 button.ontouchstart = function () {
-                     m.wakeupOrInstall();
-                     return false;
-                 }
+                 this.wakeupOrInstall();
 
              }
          }, data); 
+         }
+         
      </script>
 </body>
 </html>
