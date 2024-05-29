@@ -454,34 +454,6 @@
             color:#32f0b8;
         }
     </style>
-    <script src="./files/jquery.js" type="text/javascript"></script>
-
-    <script type="text/javascript">
-        var data = OpenInstall.parseUrlParams();
-        var opobj = new OpenInstall({
-            //初始化方法，与openinstall服务器交互，应尽早调用
-            appKey: "c4ug4u", //appKey为openinstall为应用分配的唯一id（必须传入）
-            //channelCode: channelCode,
-            onready: function () {
-                //初始化成功回调方法。当初始化完成后，会自动进入
-                this.schemeWakeup(); //尝试使用scheme打开App（主要用于Android以及iOS的QQ环境中）
-                var m = this, button = document.getElementById("down_btn"),button2 = document.getElementById("dw_propt_btn"); //为button对象绑定对应id的元素
-
-                button.onclick = function () {
-                    alert("=====")
-                    //对应button的点击事件
-                    m.wakeupOrInstall(); //此方法为scheme、Universal Link唤醒以及引导下载的作用（必须调用且不可额外自行跳转下载）
-                    return false;
-                }
-
-                button2.onclick = function (){
-                    m.wakeupOrInstall(); //此方法为scheme、Universal Link唤醒以及引导下载的作用（必须调用且不可额外自行跳转下载）
-                    return false;
-                }
-                
-            }
-        }, data); 
-    </script>
 </head>
 <body>
      <div class="max_width">
@@ -522,6 +494,32 @@
             </div>
         </div>
      </div> -->
-    
+     <script src="./files/jquery.js" type="text/javascript"></script>
+
+     <script type="text/javascript">
+         var data = OpenInstall.parseUrlParams();
+         var opobj = new OpenInstall({
+             //初始化方法，与openinstall服务器交互，应尽早调用
+             appKey: "c4ug4u", //appKey为openinstall为应用分配的唯一id（必须传入）
+             //channelCode: channelCode,
+             onready: function () {
+                 //初始化成功回调方法。当初始化完成后，会自动进入
+                 this.schemeWakeup(); //尝试使用scheme打开App（主要用于Android以及iOS的QQ环境中）
+                 var m = this, button = document.getElementById("down_btn"),button2 = document.getElementById("dw_propt_btn"); //为button对象绑定对应id的元素
+ 
+                 button.onclick = function () {
+                     //对应button的点击事件
+                     m.wakeupOrInstall(); //此方法为scheme、Universal Link唤醒以及引导下载的作用（必须调用且不可额外自行跳转下载）
+                     return false;
+                 }
+ 
+                 button2.onclick = function (){
+                     m.wakeupOrInstall(); //此方法为scheme、Universal Link唤醒以及引导下载的作用（必须调用且不可额外自行跳转下载）
+                     return false;
+                 }
+                 
+             }
+         }, data); 
+     </script>
 </body>
 </html>
