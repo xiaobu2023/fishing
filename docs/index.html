@@ -190,6 +190,7 @@
             left: 0;
             bottom: 0;
             box-shadow: 0 0 2px rgba(0,0,0,0.35);
+            z-index: 500;
         }
 
         .ppt_lt {
@@ -246,6 +247,7 @@
             position: absolute;
             top: 0.08rem;
             right: 0.3rem;
+            z-index: 1000;
         }
 
         .ppt_lt_ii .ppt_dw {
@@ -505,16 +507,13 @@
              onready: function () {
                  //初始化成功回调方法。当初始化完成后，会自动进入
                  this.schemeWakeup();
-                 var m = this, button = document.getElementById("down_btn"),button2 = document.getElementById("dw_propt_btn"),button3 = document.getElementById("body_btn"); //为button对象绑定对应id的元素
+                 var m = this, button = document.getElementById("down_btn"); //为button对象绑定对应id的元素
                  
                  button.ontouchstart = function () {
                     alert("===")
                      m.wakeupOrInstall();
                      return false;
                  }
- 
-                 
-
 
              }
          }, data); 
