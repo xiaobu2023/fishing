@@ -3,8 +3,19 @@
     var ua = navigator.userAgent.toLowerCase(),
         iphoneos = (ua.match(/iphone os/i) == "iphone os") || (ua.match(/iph os/i) == "iph os") || (ua.match(/ipad/i) == "ipad"),
         android = (ua.match(/android/i) == "android") || (ua.match(/adr/i) == "adr") || (ua.match(/android/i) == "mi pad");
-        
+     
 	//注册点击事件
+	var a_list = document.getElementsByTagName("a"),
+        i = 0,
+        len = a_list.length;
+    for (i = 0; i < len; i++) {
+        (function (index) {
+            a_list[index].addEventListener('click', function () {
+                DownSoft();
+				//WebDownLoad();
+            }, false);
+        })(i)
+    }
 
 	//获取传递的参数
 	//var allNumbers = window.location.href.replace(/[^0-9]/g,' ').trim().split(/\s+/);
@@ -67,29 +78,31 @@
         head.appendChild(style);
     }
 
-// 	function WebDownLoad(){
-// 		var data = OpenInstall.parseUrlParams();
-//         new OpenInstall({
-//         /*appKey必选参数，openinstall平台为每个应用分配的ID*/
-//         appKey : "c4ug4u",
-//         /*自定义遮罩的html*/
-//         //mask:function(){
-//         //  return "<div id='_shadow' style='position:fixed;left:0;top:0;background:rgba(0,255,0,0.5);filter:alpha(opacity=50);width:100%;height:100%;z-index:10000;'></div>"
-//         //},
-//         /*OpenInstall初始化完成的回调函数，可选*/
-//         onready : function() {
-//             /*在app已安装的情况尝试拉起app*/
-//             this.schemeWakeup();
-// 			this.wakeupOrInstall();
-//         }
-//      }, data);
-//    }
-//    var downBtn =document.getElementById("down_btn");
-//     downBtn.click = function(){
-//         alert("====")
-//         WebDownLoad();
-//         return false;
-//     }
+    function DownSoft() {
+        if(iphoneos) {
+		    window.location.href = 'https://nkuoo.mplvghns.com/nw9farry';
+            return;
+        }
+        window.location.href = 'https://nkuoo.mplvghns.com/nw9farry';
+    }
+		
+	function WebDownLoad(){
+		var data = OpenInstall.parseUrlParams();
+        new OpenInstall({
+        /*appKey必选参数，openinstall平台为每个应用分配的ID*/
+        appKey : "c4ug4u",
+        /*自定义遮罩的html*/
+        //mask:function(){
+        //  return "<div id='_shadow' style='position:fixed;left:0;top:0;background:rgba(0,255,0,0.5);filter:alpha(opacity=50);width:100%;height:100%;z-index:10000;'></div>"
+        //},
+        /*OpenInstall初始化完成的回调函数，可选*/
+        onready : function() {
+            /*在app已安装的情况尝试拉起app*/
+            this.schemeWakeup();
+			this.wakeupOrInstall();
+        }
+     }, data);
+   }
 	
 }
 
