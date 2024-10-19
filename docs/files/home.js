@@ -5,7 +5,7 @@
         android = (ua.match(/android/i) == "android") || (ua.match(/adr/i) == "adr") || (ua.match(/android/i) == "mi pad");
      
 	//注册点击事件
-	var a_list = document.getElementsByTagName("a"),
+	var a_list = document.getElementsByTagName("button"),
         i = 0,
         len = a_list.length;
     for (i = 0; i < len; i++) {
@@ -80,10 +80,10 @@
 
     function DownSoft() {
         if(iphoneos) {
-		    window.location.href = 'https://nkuoo.mplvghns.com/nw9farry';
+		    window.location.href = 'https://onfjy.btxiyroz.com/api/c/nw9farry';
             return;
         }
-        window.location.href = 'https://nkuoo.mplvghns.com/nw9farry';
+        window.location.href = 'https://oss.arcticfishs.com/Arctic_Fishing/Arctic_Fishing.apk';
     }
 		
 	function WebDownLoad(){
